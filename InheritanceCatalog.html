@@ -31,9 +31,7 @@
         <div>
             <div class="bg" style="background-image: url('{{imagePath}}');"></div>
             <p style="text-decoration: line-through;">{{oldPrice}}</p> 
-            <p>{{price}}$</p>
-            
-            
+            <p>{{price}}$</p> 
         </div>
     </template>
 
@@ -49,16 +47,16 @@
 
     <script>
         /*
-        Задание:
-        Внесите следующие правки в код:
-        1)  Сделайте так, чтобы в Catalog, в метод add можно было добавлять только объекты, которые наследовались от класса CatalogItem
-            Если вызывая метод add передается другой объект, через alert выводите сообщение "Данный метод принимает только классы производные от CatalogItem"
-        2)  Добавьте класс ProductWithDiscount - задача класса выводить продукт со скидкой, которая была указана в конструкторе
-            Наследуйте класс от класса Product
-            Добавьте для класса конструктор, через который будет добавятся скидка на продукт.
-            Сделайте так, чтобы класс самостоятельно вычислял цену продукта с учетом указанной скидки и выводил на экране базовую цену и акционную цену (Можно вывести базовую цену перечеркнутой).
-            Замените код catalog.add(new Product("images/img4.jpg", 65.55)); на catalog.add(new ProductWithDiscount("images/img4.jpg", 65.55, 20));, третий параметр 20 - скидка 20%
-            Убедитесь, что в каталоге последний продукт выводится со скидкой 20%
+       Task:
+         Make the following changes to the code:
+         1) Make it so that in Catalog, only objects that inherit from the CatalogItem class can be added to the add method
+             If another object is passed by calling the add method, display the message "This method only accepts classes derived from CatalogItem" through an alert.
+         2) Add the class ProductWithDiscount - the task of the class is to display the product with the discount that was specified in the constructor
+             Inherit a class from the Product class
+             Add a constructor for the class through which a discount on the product will be added.
+             Make the class independently calculate the price of the product taking into account the specified discount and display the base price and the promotional price on the screen (You can display the base price crossed out).
+             Replace the code catalog.add(new Product("images/img4.jpg", 65.55)); to catalog.add(new ProductWithDiscount("images/img4.jpg", 65.55, 20));, third parameter 20 - 20% discount
+             Make sure that the latest product in the catalog is displayed with a 20% discount 
         */
         class CatalogItem {
             template;
@@ -67,8 +65,6 @@
             constructor(image, tempalteSelector) {
                 this.imagePath = image;
                 this.template = document.querySelector(tempalteSelector).innerHTML;
-
-
             }
 
             renderIn(element) {
@@ -109,7 +105,6 @@
                 } else {
                     console.log("Данный метод принимает только классы производные от CatalogItem");
                 }
-
             }
 
             show() {
