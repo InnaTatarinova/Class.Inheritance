@@ -11,18 +11,18 @@
 <body>
     <script>
         /*
-        Задание:
-        Сделайте так, чтобы класс Truck наследовался от класса Car.
-        Переопределит метод move, чтобы в производном классе он выводил сообщение, "Грузовик движется со скоростью 50 км/час".
+         Task:
+         Make the Truck class inherit from the Car class.
+         Move displays the message: "The truck is moving at 50 km/h."
         */
 
         class Car {
             start() {
-                console.log("Двигатель запущен.");
+                console.log("Engine starts.");
             }
 
             move() {
-                console.log("Машина двигается со скоростью 80 км/час");
+                console.log("The car is moving at 80 km/h.");
             }
         }
 
@@ -30,15 +30,15 @@
             weight;
             loadCargo(weight) {
                 if (weight > 1000) {
-                    console.log("Этот грузовик не может перевозить более 1000кг груза");
+                    console.log("This truck cannot carry more than 1000kg of cargo");
                 }
                 else {
                     this.weight = weight;
-                    console.log(`В грузовик загружено ${this.weight}кг.`);
+                    console.log(`Truck loaded with ${this.weight} kg.`);
                 }
             }
             move() {
-                console.log("Грузовик движется со скоростью 50 км/час");
+                console.log("The truck is moving at 50 km/h.");
             }
         }
 
